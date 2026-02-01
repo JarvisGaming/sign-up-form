@@ -16,12 +16,16 @@
     --banner-font-size: 8rem;
 
     --input-border-default-color: #E5E7EB;
-    --signup-footer-color: #596D48;
     --shadow-color: #848484;
 
     --valid-input-color: green;
     --invalid-input-color: red;
     --focus-input-color: rgb(0, 89, 255);
+
+    --signup-footer-color: #596D48;
+    --signup-footer-hover-color: hsl(from var(--signup-footer-color) h s calc(l - 5));
+    --signup-footer-focus-color: hsl(from var(--signup-footer-color) h s calc(l - 15));
+
 }
 
 body {
@@ -161,11 +165,12 @@ body {
 }
 
 .signup .footer button:hover {
-    background-color: hsl(from var(--signup-footer-color) h s calc(l - 5));
+    background-color: var(--signup-footer-hover-color);
+    cursor: pointer;
 }
 
 .signup .footer button:active {
-    background-color: hsl(from var(--signup-footer-color) h s calc(l - 10));
+    background-color: var(--signup-footer-focus-color)
 }
 
 .signup .footer .login {
@@ -175,6 +180,14 @@ body {
 .signup .footer [href] {
     color: var(--signup-footer-color);
     text-decoration: none;
+}
+
+.signup .footer [href]:hover {
+    color: var(--signup-footer-hover-color);
+}
+
+.signup .footer [href]:focus {
+    color: var(--signup-footer-focus-color);
 }
 
 /* || Form validation */
