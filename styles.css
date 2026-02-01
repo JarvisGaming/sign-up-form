@@ -1,0 +1,83 @@
+@font-face {
+    font-family: 'norsebold';
+    src: url('fonts/norsebold-webfont.woff2') format('woff2'),
+        url('fonts/norsebold-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+:root {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    /* 1 rem = 10px */
+    font-size: 62.5%;
+
+    --create-account-color: #596D48;
+    --input-border-default-color: #E5E7EB;
+    --hero-text-color: white;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    font-size: 1.6rem;
+    height: 100vh;
+
+    display: flex;
+}
+
+
+/* || Left banner */
+
+.hero {
+    position: relative;
+    min-width: fit-content;
+    max-width: fit-content;
+}
+
+.hero .bg {
+    height: 100%;
+}
+
+.hero .banner {
+    position: absolute;
+    top: 15%;
+    width: 100%;
+
+    background-color: rgba(0, 0, 0, 0.4);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.hero .banner h1 {
+    font-family: "norsebold";
+    font-size: 8rem;
+    color: var(--hero-text-color);
+}
+
+.hero .icon {
+    width: 20%;
+}
+
+.hero .img-attribution {
+    font-size: 2rem;
+    color: white;
+
+    position: absolute;
+    bottom: 3rem;
+
+    /* Center text */
+    left: 0;
+    right: 0;
+    width: fit-content;
+    margin-inline: auto;
+}
+
+.hero .img-attribution [href] {
+    color: var(--hero-text-color);
+}
