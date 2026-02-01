@@ -12,14 +12,16 @@
     /* 1 rem = 10px */
     font-size: 62.5%;
 
-    --signup-footer-color: #596D48;
-    --input-border-default-color: #E5E7EB;
     --hero-text-color: white;
     --banner-font-size: 8rem;
+
+    --input-border-default-color: #E5E7EB;
+    --signup-footer-color: #596D48;
+    --shadow-color: #848484;
+
     --valid-input-color: green;
     --invalid-input-color: red;
     --focus-input-color: rgb(0, 89, 255);
-    --shadow-color: #848484;
 }
 
 body {
@@ -118,6 +120,7 @@ body {
 .signup form {
     flex: 2;
     background-color: #fff;
+    box-shadow: 0 0 20px 5px var(--shadow-color);
 }
 
 .signup form label {
@@ -141,7 +144,7 @@ body {
     border: 1px solid rgb(150, 150, 150);
     border-radius: 5px;
     background-color: rgb(250, 250, 250);
-    padding: 0.5rem 1rem;
+    padding: 0.5rem 4rem 0.5rem 1rem;
     width: 30ch;
 }
 
@@ -155,7 +158,14 @@ body {
     padding: 1rem 3rem;
     border: none;
     border-radius: 10px;
+}
 
+.signup .footer button:hover {
+    background-color: hsl(from var(--signup-footer-color) h s calc(l - 5));
+}
+
+.signup .footer button:active {
+    background-color: hsl(from var(--signup-footer-color) h s calc(l - 10));
 }
 
 .signup .footer .login {
@@ -177,18 +187,18 @@ body {
     border-color: transparent;
 }
 
+.signup input:user-invalid {
+    outline: 2px solid var(--invalid-input-color);
+    border-color: transparent;
+}
+
 .signup span:has(input:user-valid)::after {
     color: var(--valid-input-color);
     content: "✔";
     font-size: 2.5rem;
 
     position: absolute;
-    right: -3rem;
-}
-
-.signup input:user-invalid {
-    outline: 2px solid var(--invalid-input-color);
-    border-color: transparent;
+    right: 1rem;
 }
 
 .signup span:has(input:user-invalid)::after {
@@ -197,7 +207,7 @@ body {
     font-size: 2.5rem;
 
     position: absolute;
-    right: -3rem;
+    right: 1rem;
 }
 
 .signup input:hover,
