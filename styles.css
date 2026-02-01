@@ -15,10 +15,7 @@
     --create-account-color: #596D48;
     --input-border-default-color: #E5E7EB;
     --hero-text-color: white;
-}
-
-html {
-    height: 100%;
+    --banner-font-size: 8rem;
 }
 
 body {
@@ -51,17 +48,18 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 2rem;
     gap: 1rem;
 }
 
 .hero .banner h1 {
     font-family: "norsebold";
-    font-size: 8rem;
+    font-size: var(--banner-font-size);
     color: var(--hero-text-color);
 }
 
 .hero .icon {
-    width: 20%;
+    height: calc(var(--banner-font-size) * 1.8);
 }
 
 .hero .img-attribution {
@@ -76,6 +74,9 @@ body {
     right: 0;
     width: fit-content;
     margin-inline: auto;
+
+    /* For overflow when font size is too large */
+    text-align: center;
 }
 
 .hero .img-attribution [href] {
